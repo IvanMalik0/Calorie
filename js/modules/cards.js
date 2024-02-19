@@ -1,5 +1,6 @@
+import { getResources } from "../services/services";
+
 function cards () {
-    // Class card constructor
 
     class MenuCard {
         constructor(src, alt, subtitle, descr, price, parentSelector, ...classes) {
@@ -10,11 +11,11 @@ function cards () {
           this.price = price;
           this.parent = document.querySelector(parentSelector);
           this.classes = classes;
-          this.exchange = 36;
-          this.exchangeToUAH();
+          this.exchange = 87;
+          this.exchangeToRUB();
         }
   
-        exchangeToUAH () {
+        exchangeToRUB() {
           this.price *= this.exchange;
         }
   
@@ -35,30 +36,20 @@ function cards () {
               <div class="menu__item-divider"></div>
               <div class="menu__item-price">
                   <div class="menu__item-cost">Цена:</div>
-                  <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
+                  <div class="menu__item-total"><span>${this.price}</span> руб/день</div>
               </div>
           `;
           this.parent.append(element);
         }
       }
   
-      const getResources = async url => {
-        const res = await fetch(url);
-  
-        if (!res.ok) {
-          throw new Error(`Couldn't fetch ${url}, status: ${res.status}}`);
-        }
-  
-        return await res.json();
-     };
-  
     getResources('http://localhost:3000/menu')
       .then(data => {
-        data.data.forEach(({img, altimg, title, descr, price}) => {
+        data.forEach(({img, altimg, title, descr, price}) => {
           new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
         })
       })
   
 };
 
-module.exports = cards;
+export default cards;
