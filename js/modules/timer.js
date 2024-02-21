@@ -1,4 +1,4 @@
-function timer(id, deadline) {
+export function timer(id, deadline) {
 
     function getTimeRemaining(endtime) {
       let days, hours, minutes, seconds;
@@ -53,5 +53,3 @@ function timer(id, deadline) {
     setClock(id, deadline);
 
 };
-
-export default timer;

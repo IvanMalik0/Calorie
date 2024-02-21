@@ -1,7 +1,7 @@
 import { modalOpen, modalClose } from "./modal";
 import { postData } from "../services/services";
 
-function forms(formSelector, modalTimer) {
+export function forms(formSelector, modalTimer) {
   
     const forms = document.querySelectorAll(formSelector);
 
@@ -31,16 +31,16 @@ function forms(formSelector, modalTimer) {
 
         const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
-        postData('http://localhost:3000/requests', json)
-        .then(data => {
-            console.log(data);
-            showThankingModal(message.success);
-            statusMessage.remove();
-        }).catch(() => {
+        try {
+          const data = postData('http://localhost:3000/requests', json);
+          console.log(data);
+          showThankingModal(message.success);
+          statusMessage.remove();
+      } catch(err) {
           showThankingModal(message.failure);
-        }).finally(() => {
+      } finally {
           form.reset();
-        });
+      }
       })
     }
 
@@ -67,7 +67,4 @@ function forms(formSelector, modalTimer) {
         modalClose('.modal');
       }, 4000);
     }
-
 };
-
-export default forms;

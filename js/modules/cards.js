@@ -1,6 +1,6 @@
 import { getResources } from "../services/services";
 
-function cards () {
+export function cards () {
 
     class MenuCard {
         constructor(src, alt, subtitle, descr, price, parentSelector, ...classes) {
@@ -51,5 +51,3 @@ function cards () {
       })
   
 };
-
-export default cards;

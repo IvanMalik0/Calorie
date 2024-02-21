@@ -1,4 +1,4 @@
-const postData = async (url, data) => {
+export const postData = async (url, data) => {
     const res = await fetch(url, {
      method: "POST",
        headers: {
@@ -10,7 +10,7 @@ const postData = async (url, data) => {
     return await res.json();
  };
 
- const getResources = async url => {
+export const getResources = async url => {
     const res = await fetch(url);
 
     if (!res.ok) {
@@ -19,6 +19,3 @@ const postData = async (url, data) => {
 
     return await res.json();
  };
-
- export {postData};
- export {getResources};

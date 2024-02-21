@@ -1,10 +1,10 @@
-import tabs from './modules/tabs';
-import timer from './modules/timer';
-import slider from './modules/slider';
-import modal from './modules/modal';
-import forms from './modules/forms';
-import cards from './modules/cards';
-import calculator from './modules/calculator';
+import { tabs } from './modules/tabs';
+import { timer } from './modules/timer';
+import { slider } from './modules/slider';
+import { modal } from './modules/modal';
+import { forms } from './modules/forms';
+import { cards } from './modules/cards';
+import { calculator } from './modules/calculator';
 import { modalOpen } from './modules/modal';
 
 window.addEventListener('DOMContentLoaded', () => {

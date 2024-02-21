@@ -1,4 +1,4 @@
-function tabs(tabsSelector, tabsContentSelector, tabsParentSelector, activeClass) {
+export function tabs(tabsSelector, tabsContentSelector, tabsParentSelector, activeClass) {
 
     const tabs = document.querySelectorAll(tabsSelector),
           tabsContent = document.querySelectorAll(tabsContentSelector),
@@ -37,5 +37,3 @@ function tabs(tabsSelector, tabsContentSelector, tabsParentSelector, activeClass
       }
     });
 };
-
-export default tabs;

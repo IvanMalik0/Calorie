@@ -1,4 +1,4 @@
-function modalOpen(modalSelector, modalTimer) {
+export function modalOpen(modalSelector, modalTimer) {
   
   const modal = document.querySelector(modalSelector);
 
@@ -11,7 +11,7 @@ function modalOpen(modalSelector, modalTimer) {
   }
 }
 
-function modalClose(modalSelector) {
+export function modalClose(modalSelector) {
   const modal = document.querySelector(modalSelector);
 
   modal.classList.add('hide');
@@ -19,7 +19,7 @@ function modalClose(modalSelector) {
   document.body.style.overflow = '';
 };
 
-function modal(trigBtnSelector, modalSelector, modalTimer) {
+export function modal(trigBtnSelector, modalSelector, modalTimer) {
 
     const modalTrigBtn = document.querySelectorAll(trigBtnSelector),
           modal = document.querySelector(modalSelector);
@@ -52,7 +52,3 @@ function modal(trigBtnSelector, modalSelector, modalTimer) {
     window.addEventListener('scroll', modalScroll);
 
 };
-
-export default modal;
-export {modalOpen};
-export {modalClose};
