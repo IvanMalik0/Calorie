@@ -42,7 +42,7 @@ export function forms(formSelector, modalTimer) {
           form.reset();
       }
       })
-    }
+    };
 
     function showThankingModal (message) {
       const prevModalDialog = document.querySelector('.modal__dialog');
@@ -66,5 +66,5 @@ export function forms(formSelector, modalTimer) {
         prevModalDialog.classList.remove('hide');
         modalClose('.modal');
       }, 4000);
-    }
+    };
 };
